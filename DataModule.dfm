@@ -19,7 +19,7 @@ object DM: TDM
   end
   object FDConnection: TFDConnection
     Params.Strings = (
-      'Database=C:\RADStudio\Bargeldrechner\DB_Bargeldrechner.db'
+      'Database=DB_Bargeldrechner.db'
       'DriverID=SQLite')
     FetchOptions.AssignedValues = [evAutoClose]
     FetchOptions.AutoClose = False

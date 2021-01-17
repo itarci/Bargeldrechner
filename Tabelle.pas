@@ -81,6 +81,9 @@ type
     SplitView: TSplitView;
     Label17: TLabel;
     DBEdit32: TDBEdit;
+    sbAbout: TSpeedButton;
+    VirtualImageList48p: TVirtualImageList;
+    VirtualImageList128p: TVirtualImageList;
     procedure FormCreate(Sender: TObject);
     procedure sbLinksClick(Sender: TObject);
     procedure sbRechtsClick(Sender: TObject);
@@ -91,6 +94,7 @@ type
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure FormResize(Sender: TObject);
     procedure sbPrintClick(Sender: TObject);
+    procedure sbAboutClick(Sender: TObject);
   private
     procedure UpdateQuStueckelung;
     procedure SaveOnControlExit;
@@ -108,7 +112,7 @@ implementation
 
 {$R *.dfm}
 
-uses DataModule, XmlSettings;
+uses DataModule, XmlSettings, About;
 
 procedure TFrmBargeldrechner.FormCreate(Sender: TObject);
 var
@@ -155,6 +159,7 @@ begin
     AppSettings.WriteInteger('Form', 'Top',     Top);
     AppSettings.WriteInteger('Form', 'Left',    Left);
     AppSettings.WriteBoolean('Form', 'InitMax', WindowState = wsMaximized);
+    //AppSettings.WriteString('Database','Directory',GetCurrentDir + '\' + 'DB_Bargeldrechner.db');
     AppSettings.Save;
   finally
     AppSettings.Free;
@@ -173,6 +178,7 @@ begin
       WindowState := wsMaximized
     else
       WindowState := wsNormal;
+    DM.FDConnection.Params.Database := AppSettings.ReadString('Database', 'Directory', 'DB_Bargeldrechner.db');
   finally
     AppSettings.Free;
   end;
@@ -245,6 +251,16 @@ begin
   DM.frxReport.LoadFromFile(sfr3Datei);
   if DM.frxReport.PrepareReport then begin
     DM.frxReport.ShowPreparedReport;
+  end;
+end;
+
+procedure TFrmBargeldrechner.sbAboutClick(Sender: TObject);
+begin
+  FrmAbout := TFrmAbout.Create(self);
+  try
+    FrmAbout.ShowModal;
+  finally
+    FrmAbout.Free;
   end;
 end;
 

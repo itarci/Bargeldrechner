@@ -7,7 +7,8 @@ uses
   Utils in 'Utils.pas',
   XmlSettings in 'XmlSettings.pas',
   Vcl.Themes,
-  Vcl.Styles;
+  Vcl.Styles,
+  About in 'About.pas' {FrmAbout};
 
 {$R *.res}
 
