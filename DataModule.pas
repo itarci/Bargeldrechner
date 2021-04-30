@@ -135,12 +135,12 @@ procedure TDM.FDQuStueckelungCalcFields(DataSet: TDataSet);
 begin
   FDQuStueckelungBetrag200.Value := FDQuStueckelungAnzahl200.AsInteger * 200;
   FDQuStueckelungBetrag100.Value := FDQuStueckelungAnzahl100.AsInteger * 100;
-  FDQuStueckelungBetrag50.Value := FDQuStueckelungAnzahl50.AsInteger * 50;
-  FDQuStueckelungBetrag20.Value := FDQuStueckelungAnzahl50.AsInteger * 20;
-  FDQuStueckelungBetrag10.Value := FDQuStueckelungAnzahl10.AsInteger * 10;
-  FDQuStueckelungBetrag5.Value := FDQuStueckelungAnzahl5.AsInteger * 5;
-  FDQuStueckelungBetrag2.Value := FDQuStueckelungAnzahl2.AsInteger * 2;
-  FDQuStueckelungBetrag1.Value := FDQuStueckelungAnzahl1.AsInteger * 1;
+  FDQuStueckelungBetrag50.Value  := FDQuStueckelungAnzahl50.AsInteger * 50;
+  FDQuStueckelungBetrag20.Value  := FDQuStueckelungAnzahl20.AsInteger * 20;
+  FDQuStueckelungBetrag10.Value  := FDQuStueckelungAnzahl10.AsInteger * 10;
+  FDQuStueckelungBetrag5.Value   := FDQuStueckelungAnzahl5.AsInteger * 5;
+  FDQuStueckelungBetrag2.Value   := FDQuStueckelungAnzahl2.AsInteger * 2;
+  FDQuStueckelungBetrag1.Value   := FDQuStueckelungAnzahl1.AsInteger * 1;
   FDQuStueckelungBetrag050.Value := FDQuStueckelungAnzahl050.AsInteger * 0.5;
   FDQuStueckelungBetrag020.Value := FDQuStueckelungAnzahl020.AsInteger * 0.2;
   FDQuStueckelungBetrag010.Value := FDQuStueckelungAnzahl010.AsInteger * 0.1;
